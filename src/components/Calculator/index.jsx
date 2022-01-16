@@ -162,7 +162,7 @@ const Keypad = memo(
         <Operator>+</Operator>
 
         <Number>1</Number>
-        <Number>2</Number>
+        <Number>222</Number>
         <Number>3</Number>
         <Operator>-</Operator>
 
