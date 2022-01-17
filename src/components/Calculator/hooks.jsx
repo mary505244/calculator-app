@@ -1,10 +1,4 @@
-import {
-  findLast,
-  isOperator,
-  findLastOperator,
-  calculate,
-  format,
-} from "./logic";
+import {findLast, isOperator, findLastOperator, calculate, format} from "./logic";
 import { useReducer, useMemo } from "react";
 
 const initialState = ["0"];

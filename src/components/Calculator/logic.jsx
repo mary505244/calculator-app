@@ -9,13 +9,14 @@ export function findLast(calculation) {
 }
 
 export function findLastOperator(calculation) {
-  return calculation.reduce((acc, cur) => (isOperator(cur) ? cur : acc), "");
+  return calculation.reduce((accumulator, currentValue) => (isOperator(currentValue) ? currentValue : accumulator), "");
 }
 
 export function isOperator(token) {
   return ["+", "-", "x", "/"].includes(token);
 }
 
+//運算次序
 function PEMDAS(calculation) {
   const index = calculation.findIndex((operator) =>
     ["x", "/"].includes(operator)
@@ -35,6 +36,8 @@ function merge([left, operator, right]) {
   }[operator](Number(left), Number(right));
 }
 
+
+//計算過程:數字 運算子 數字 ex:1+1
 export function calculate(calculation) {
   if (calculation.length < 3) return calculation;
 

@@ -8,9 +8,9 @@ function Screen({ children }) {
       className={clsx(
         "flex justify-end items-center rounded-lg p-6 pb-4",
         "text-3xl sm:text-5xl font-bold",
-        "blue:bg-blue-800",
-        "cyan:bg-gray-400",
-        "violet:bg-violet-800"
+        "blue:bg-blue-600",
+        "pink:bg-pink-400",
+        "purple:bg-purple-500"
       )}
     >
       <output>{children}</output>
@@ -23,7 +23,7 @@ function Button({ type = "button", children, className, ...props }) {
     <button
       type={type}
       className={clsx(
-        "rounded sm:rounded-lg font-bold",
+        "rounded sm:rounded-full font-bold",
         "shadow-normal active:shadow-pressed active:brightness-110",
         className
       )}
@@ -47,7 +47,7 @@ function Toggle({ children, className, name, checked, ...props }) {
 
       <label
         className={clsx(
-          "h-full rounded sm:rounded-lg font-bold",
+          "h-full rounded sm:rounded-full font-bold",
           "shadow-normal peer-checked:brightness-110",
           className
         )}
@@ -67,9 +67,9 @@ const Keypad = memo(
         <Button
           className={clsx(
             "text-3xl",
-            "blue:text-blue-600 blue:bg-orange-500 blue:ring-orange-600",
-            "cyan:bg-yellow-500 cyan:ring-yellow-600",
-            "violet:bg-violet-700 violet:ring-violet-600",
+            "blue:text-blue-900 blue:bg-blue-100 blue:ring-gray-100",
+            "pink:text-gray-200 pink:bg-pink-400 pink:ring-gray-200",
+            "purple:text-purple-800 purple:bg-purple-200 purple:ring-gray-200",
             className
           )}
           onClick={push(props.children)}
@@ -88,9 +88,9 @@ const Keypad = memo(
           name="operator"
           className={clsx(
             "text-3xl flex justify-center items-center",
-            "blue:text-blue-600 blue:bg-orange-500 blue:ring-orange-600",
-            "cyan:bg-yellow-500 cyan:ring-yellow-600",
-            "violet:bg-violet-700 violet:ring-violet-600"
+            "blue:text-blue-500 blue:bg-white blue:ring-gray-300",
+            "pink:text-pink-600 pink:bg-gray-200 pink:ring-gray-400",
+            "purple:text-purple-200 purple:bg-purple-600 purple:ring-gray-300"
           )}
           onClick={operate(props.children)}
           checked={operator === props.children}
@@ -103,9 +103,10 @@ const Keypad = memo(
       return (
         <Button
           className={clsx(
-            "blue:bg-blue-300 blue:ring-blue-400",
-            "cyan:text-white cyan:bg-cyan-600 cyan:ring-cyan-700",
-            "violet:bg-magenta-600 violet:ring-magenta-500",
+            "col-span-2",
+            "blue:bg-purple-400 blue:ring-gray-300",
+            "pink:text-white pink:bg-blue-300 pink:ring-gray-300",
+            "purple:bg-pink-300 purple:ring-gray-300",
             className
           )}
           onClick={remove()}
@@ -130,9 +131,9 @@ const Keypad = memo(
         <Button
           className={clsx(
             "col-span-2",
-            "blue:bg-red-500 blue:ring-red-600",
-            "cyan:bg-orange-700 cyan:ring-orange-800",
-            "violet:bg-cyan-500 violet:ring-cyan-400 violet:text-blue-900",
+            "blue:bg-red-500 blue:ring-gray-300",
+            "pink:bg-red-500 pink:ring-gray-300 pink:text-white",
+            "purple:bg-red-500 purple:ring-gray-300 purple:text-white",
             className
           )}
           onClick={enter()}
@@ -144,34 +145,39 @@ const Keypad = memo(
     return (
       <div
         className={clsx(
-          "p-6 rounded-lg min-h-[26rem]",
+          "p-6 rounded-lg min-h-[30rem]",
           "grid grid-cols-4 gap-3 sm:gap-4",
-          "blue:bg-blue-700",
-          "cyan:bg-red-700",
-          "violet:bg-violet-800"
+          "blue:bg-blue-500",
+          "pink:bg-pink-300",
+          "purple:bg-purple-500"
         )}
       >
+        <Operator>²√x</Operator>
+        <Operator>x²</Operator>
+        <Del> ↩ D E L E T E</Del>
+
         <Number>7</Number>
         <Number>8</Number>
         <Number>9</Number>
-        <Del>DEL</Del>
+        <Operator>+</Operator>
 
         <Number>4</Number>
         <Number>5</Number>
         <Number>6</Number>
-        <Operator>+</Operator>
+        <Operator>-</Operator>
 
         <Number>1</Number>
-        <Number>222</Number>
+        <Number>2</Number>
         <Number>3</Number>
-        <Operator>-</Operator>
+        <Operator>x</Operator>
 
         <Fraction>.</Fraction>
         <Number>0</Number>
-        <Operator>/</Operator>
-        <Operator>x</Operator>
+        <Operator>%</Operator>
+        <Operator>÷</Operator>
+        
 
-        <Reset>RESET</Reset>
+        <Reset>R E S E T</Reset>
         <Enter>=</Enter>
       </div>
     );

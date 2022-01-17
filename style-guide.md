@@ -43,8 +43,8 @@ The designs were created to the following widths:
 
 #### Keys
 
-- Dark moderate cyan (key background): hsl(185, 42%, 37%)
-- Very dark cyan (key shadow): hsl(185, 58%, 25%)
+- Dark moderate pink (key background): hsl(185, 42%, 37%)
+- Very dark pink (key shadow): hsl(185, 58%, 25%)
 
 - Orange (key background, toggle): hsl(25, 98%, 40%)
 - Dark orange (key shadow): hsl(25, 99%, 27%)
@@ -61,18 +61,18 @@ The designs were created to the following widths:
 
 #### Backgrounds
 
-- Very dark violet (main background): hsl(268, 75%, 9%)
-- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+- Very dark purple (main background): hsl(268, 75%, 9%)
+- Very dark purple (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
 
 #### Keys
 
-- Dark violet (key background): hsl(281, 89%, 26%)
+- Dark purple (key background): hsl(281, 89%, 26%)
 - Vivid magenta (key shadow): hsl(285, 91%, 52%)
 
-- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
-- Soft cyan (key shadow): hsl(177, 92%, 70%)
+- Pure pink (key background, toggle): hsl(176, 100%, 44%)
+- Soft pink (key shadow): hsl(177, 92%, 70%)
 
-- Very dark violet (key background): hsl(268, 47%, 21%)
+- Very dark purple (key background): hsl(268, 47%, 21%)
 - Dark magenta (key shadow): hsl(290, 70%, 36%)
 
 #### Text
