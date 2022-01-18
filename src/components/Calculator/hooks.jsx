@@ -27,6 +27,10 @@ function reducer(state, action) {
       return [...state.slice(0, -1), last * 0.01];
     }
 
+    if (action.value === "²√x") {
+      return [...state.slice(0, -1), Math.sqrt(last)];
+    }
+
     return [...state.slice(0, -1), last + action.value];
   }
 

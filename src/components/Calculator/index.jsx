@@ -1,20 +1,29 @@
 import clsx from "clsx";
-import React, { memo } from "react";
+import React, { memo} from "react";
 import { useCalculator } from "./hooks";
 
 function Screen({ children }) {
+
   return (
-    <div
-      className={clsx(
-        "flex justify-end items-center rounded-lg p-6 pb-4",
-        "text-3xl sm:text-5xl font-bold",
-        "blue:bg-blue-600",
-        "pink:bg-pink-400",
-        "purple:bg-purple-500"
-      )}
-    >
-      <output>{children}</output>
-    </div>
+      <div
+        className={clsx(
+          "flex justify-end items-center rounded-lg p-6 pb-4 relative",
+          "text-3xl sm:text-5xl font-bold",
+          "blue:bg-blue-600",
+          "pink:bg-pink-400",
+          "purple:bg-purple-500"
+        )}
+      >
+        <output>{children}</output>
+
+           {/* <div
+            className={clsx(
+              "absolute top-2 left-2  text-xl sm:text-xl ",
+            )}
+          > 
+            
+          </div> */}
+      </div>
   );
 }
 
@@ -63,6 +72,7 @@ function Toggle({ children, className, name, checked, ...props }) {
 const Keypad = memo(
   ({ operator, actions: { reset, push, remove, operate, enter } }) => {
     function Number({ className, ...props }) {
+
       return (
         <Button
           className={clsx(
@@ -71,7 +81,22 @@ const Keypad = memo(
             "pink:text-gray-200 pink:bg-pink-400 pink:ring-gray-200",
             "purple:text-purple-800 purple:bg-purple-200 purple:ring-gray-200",
             className
-          )}
+          )}       
+          onClick={push(props.children)}     
+          {...props}
+        />
+      );
+    }
+
+    function Sqrt({ className, ...props }) {
+      return (
+        <Button
+        className={clsx(
+          "text-3xl flex justify-center items-center",
+          "blue:text-blue-500 blue:bg-white blue:ring-gray-300",
+          "pink:text-pink-600 pink:bg-gray-200 pink:ring-gray-400",
+          "purple:text-purple-200 purple:bg-purple-600 purple:ring-gray-300"
+        )}
           onClick={push(props.children)}
           {...props}
         />
@@ -92,8 +117,8 @@ const Keypad = memo(
             "pink:text-pink-600 pink:bg-gray-200 pink:ring-gray-400",
             "purple:text-purple-200 purple:bg-purple-600 purple:ring-gray-300"
           )}
-          onClick={operate(props.children)}
           checked={operator === props.children}
+          onClick={operate(props.children) }
           {...props}
         />
       );
@@ -152,8 +177,8 @@ const Keypad = memo(
           "purple:bg-purple-500"
         )}
       >
-        <Operator>²√x</Operator>
-        <Operator>x²</Operator>
+        <Sqrt>²√x</Sqrt>
+        <Operator>xʸ</Operator>
         <Del> ↩ D E L E T E</Del>
 
         <Number>7</Number>
