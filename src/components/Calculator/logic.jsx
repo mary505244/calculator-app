@@ -13,13 +13,17 @@ export function findLastOperator(calculation) {
 }
 
 export function isOperator(token) {
-  return ["+", "-", "x", "/"].includes(token);
+  // return ["+", "-", "x", "÷", "%"].includes(token);
+  return ["+", "-", "x", "÷"].includes(token);
+
 }
 
 //運算次序
 function PEMDAS(calculation) {
   const index = calculation.findIndex((operator) =>
-    ["x", "/"].includes(operator)
+    // ["x", "÷", "%"].includes(operator)
+    ["x", "÷"].includes(operator)
+
   );
 
   return index !== -1
@@ -29,10 +33,11 @@ function PEMDAS(calculation) {
 
 function merge([left, operator, right]) {
   return {
-    "/": (a, b) => a / b,
-    x: (a, b) => a * b,
+    "÷": (a, b) => a / b,
+    "x": (a, b) => a * b,
     "+": (a, b) => a + b,
     "-": (a, b) => a - b,
+    // "%": (a, b) => a * 0.01,
   }[operator](Number(left), Number(right));
 }
 

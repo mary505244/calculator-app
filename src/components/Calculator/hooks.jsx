@@ -23,6 +23,10 @@ function reducer(state, action) {
       return [...state.slice(0, -1), last + action.value];
     }
 
+    if (action.value === "%") {
+      return [...state.slice(0, -1), last * 0.01];
+    }
+
     return [...state.slice(0, -1), last + action.value];
   }
 

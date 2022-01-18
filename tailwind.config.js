@@ -3,6 +3,12 @@ module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    backgroundImage: {
+      'bluebg': "url('src/components/Calculator/imgs/blue.jpg')",
+      'pinkbg': "url('src/components/Calculator/imgs/pink.jpg')",
+      'purplebg': "url('src/components/Calculator/imgs/purple.jpg')"
+
+    },
     themeVariants: ["pink", "purple", "blue"],
     extend: {
       colors: {
